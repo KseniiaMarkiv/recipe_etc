@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+Started own project - recipe_etc app
+I will add description as far as will add new abilities at app
