@@ -1,15 +1,15 @@
 <%= form_with(model: post) do |form| %>
   <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <details style="color: #f44336">
+    <summary style="font-size: 1.3rem"><%= pluralize(post.errors.count, "error") %></summary>
+      <p><strong style="font-family: Garamond; font-size: 1.1rem">Prohibited this post from being saved:</strong></p>
+        <i><ul style="font-size: 0.9rem">
+          <% post.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul></i>    
+  </details>
+  <% end %> <%# if post.errors.any? %>
 
   <div>
     <%= form.label :title, style: "display: block" %>
@@ -18,10 +18,10 @@
 
   <div>
     <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <%= form.rich_text_area :content %>
   </div>
 
-  <div>
+  <div class="actions">
     <%= form.submit %>
   </div>
-<% end %>
+<% end %> <%# form_with     %>
