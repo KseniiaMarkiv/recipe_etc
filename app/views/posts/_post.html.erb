@@ -4,9 +4,14 @@
     <%= post.title %>
   </p>
 
-  <p>
+  <p style="font-family: Garamond; font-size: 1.1rem">
     Posted <%= time_tag post.created_at, "data-local": "time-ago" %>
   </p>
+
+  <details>
+    <summary style="color: #00bcd4"><strong><%= pluralize post.comments.count, "comment" %></strong></summary>
+    <p> <%= render post.comments %> </p>
+  </details>
 
   <p>
     <strong>Content:</strong>
